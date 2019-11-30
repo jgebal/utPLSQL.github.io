@@ -17,7 +17,7 @@
         {% for my_page in site.pages %}
           {% assign node_parts = node.url | split: '/' %}
           {% assign node_depth = node_parts | size %}
-          {% if my_page.title && node_depth == 2 %}
+          {% if my_page.title and node_depth == 2 %}
           <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
           {% endif %}
         {% endfor %}
