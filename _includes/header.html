@@ -18,8 +18,8 @@
           {% assign node_parts = node.url | split: '/' %}
           {% assign node_depth = node_parts | size %}
           {% if my_page.title %}
-            {% if node_depth == 2 %}
-            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+            {% if node_depth == 0 %}
+              <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
             {% endif %}
           {% endif %}
         {% endfor %}
