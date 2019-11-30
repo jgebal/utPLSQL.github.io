@@ -15,8 +15,10 @@
 
       <div class="trigger">
         {% for my_page in site.pages %}
-          {% if my_page.title && !my_page.url.start_with?("/utPLSQL/") %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.url.start_with?("/utPLSQL/") ? "true" : "false" }}</a>
+          {% assign node_parts = node.url | split: '/' %}
+          {% assign node_depth = node_parts | size %}
+          {% if my_page.title && node_depth == 2 %}
+          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
           {% endif %}
         {% endfor %}
       </div>
