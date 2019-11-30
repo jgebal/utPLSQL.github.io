@@ -15,10 +15,8 @@
 
       <div class="trigger">
         {% for my_page in site.pages %}
-          {% assign node_parts = node.url | split: '/' %}
-          {% assign node_depth = node_parts | size %}
           {% if my_page.title %}
-            {% if node_depth == 0 %}
+            {% if my_page.menuInclude %}
               <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
             {% endif %}
           {% endif %}
